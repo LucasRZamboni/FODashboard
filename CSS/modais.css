@@ -1,0 +1,131 @@
+#modalContainer {
+    /* z-index: 1000; */
+    width: 90%;
+    height: fit-content;
+    position: absolute;
+    top: 300px;
+}
+
+.modal-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+.modal-body .itens{
+    width: 100%;
+}
+.modal-body .itens h3{
+    width: 100%;
+    text-align: left;
+}
+.modal-body .itens p{
+    font-size: 20px;
+}
+.modal-body img {
+    width: 80%;
+    border-radius: 5px;
+    margin-top: 5px;
+}
+
+.modal-body small {
+    display: flex;
+    align-items: center;
+    height: 10px;
+    margin-bottom: 10px;
+    font-size: 10px;
+}
+
+.modal-body small ion-icon {
+    margin-right: 5px;
+    font-size: 12px;
+}
+
+.modal-header button {
+    color: rgb(250, 0, 0);
+    font-size: 22px;
+    padding: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+}
+
+.modal-footer button {
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: 5px;
+}
+
+.modal-footer button ion-icon {
+    font-size: 30px;
+}
+
+.modal-footer button span {
+    display: none;
+}
+
+.modal-footer button:hover span {
+    display: block;
+    margin-left: 10px;
+    transition: .3s;
+}
+
+h6 {
+    display: flex;
+    align-items: center;
+}
+
+h6 ion-icon {
+    margin-right: 10px;
+}
+
+
+.buttons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+
+.buttons a {
+    text-decoration: none;
+}
+
+
+.buttons a button {
+    padding: 10px;
+    font-size: 14px;
+    min-width: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+}
+
+
+.buttons a button ion-icon {
+    font-size: 30px;
+}
+
+
+.buttons a button span {
+    display: none;
+    font-size: 20px;
+}
+
+
+.buttons a button:hover {
+    transition: .3s;
+}
+
+
+.buttons a button:hover span {
+    display: block;
+    margin-left: 10px;
+    transition: .3s;
+}
