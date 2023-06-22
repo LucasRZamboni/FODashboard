@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- ----------------IONICONS---------------- -->
+    <!-- https://ionic.io/ionicons -->
+    <!-- ----------------IONICONS---------------- -->
+    <!-- ----------------FLATICONS---------------- -->
+    <!-- https://www.flaticon.com/br/ -->
+    <!-- ----------------FLATICONS---------------- -->
+    <!-- ----------------BOOTSTRAP---------------- -->
+    <!-- https://www.bootstrapcdn.com/ -->
+    <!-- https://bootswatch.com/morph/ -->
+    <!-- ----------------BOOTSTRAP---------------- -->
+
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js"
+        integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V"
+        crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <!-- ----------------STYLESHEETS---------------- -->
+
+    <link rel="stylesheet" href="CSS/util/_bootswatch.scss">
+    <link rel="stylesheet" href="CSS/util/_variables.scss">
+    <link rel="stylesheet" href="CSS/util/bootstrap.css">
+    <link rel="stylesheet" href="CSS/util/bootstrap.min.css">
+
+    <!-- ------------------------------------------- -->
+
+    <link rel="stylesheet" href="CSS/cadProdutos.css">
+
+    <!-- ------------------------------------------- -->
+    <link rel="stylesheet" href="CSS/stylesheet.css">
+    <link rel="stylesheet" href="CSS/media.css">
+    <!-- ----------------STYLESHEETS---------------- -->
+
+
+    <title>FODashboard - Cadastrar Produtos</title>
+</head>
+<!-- onload="verificaLogado()" | COLOCAR DENTRO DA TAG BODY -->
+
+<body>
+    <div class="loader bg-dark"></div>
+    <div class="container">
+        <header class="bg-dark">
+            <nav class="navbar navbar-expand-lg bg-gradient" data-bs-theme="dark">
+                <div class="container-fluid">
+                    <a class="navbar-brand" href="#">FastOrder</a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false"
+                        aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarColor02">
+                        <ul class="navbar-nav me-auto">
+                            <li class="nav-item">
+                                <a class="nav-link active" href="#">Menu
+                                    <span class="visually-hidden">(current)</span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Lanches</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Pricing</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">About</a>
+                            </li>
+                        </ul>
+                        <div class="d-flex">
+                            <div id="imagemUsuario"></div>
+                            <button class="btn  btn-outline-dark" onclick="logoutFirebase()">
+                                <ion-icon name="log-out-outline" class="text-warning"></ion-icon>
+                                Logout
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </header>
+        <div class="divisor"></div>
+        <section class="bg-dark flex-wrap rounded-3">
+            <div class="division-page bg-light rounded-3 mb-4"></div>
+            <h2 class="text-light mt-3 mb-3 p-3 col-12 text-center">Cadastrar produtos</h2>
+            <form action="" id="cadastro" class="bg-dark col-12">
+                <div class="form-group p-2">
+                    <label for="exampleSelect1" class="form-label ">Categoria</label>
+                    <select class="form-select" id="exampleSelect1">
+                      <option>1</option>
+                      <option>2</option>
+                      <option>3</option>
+                      <option>4</option>
+                      <option>5</option>
+                    </select>
+                  </div>
+                <div class="form-group p-2">
+                    <label class="col-form-label" for="inputDefault">Produto</label>
+                    <input type="text" class="form-control" placeholder="Ex: Lanche, Coca-cola..." id="produto">
+                </div>
+                <div class="form-group p-2">
+                    <label class="col-form-label" for="inputDefault">Preço</label>
+                    <input type="text" class="form-control" placeholder="Ex: Lanche, Coca-cola..." id="produto">
+                </div>
+            </form>
+            <!-- Arquivo HTML principal -->
+            <div id="modalContainer"></div>
+        </section>
+    </div>
+
+
+    <!-- --------IONICONS-------- -->
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <!-- --------IONICONS-------- -->
+
+    <!-- Carregando os scripts do Firebase -->
+    <script src="https://www.gstatic.com/firebasejs/9.6.7/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.7/firebase-database-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.7/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.7/firebase-storage-compat.js"></script>
+    <!-- Carregamento dos scripts do projeto-->
+    <script src="js/authentication/firebase.js"></script>
+    <script src="js/authentication/authentication.js"></script>
+    <script src="js/util/alerta.js"></script>
+    <script src="js/util/carregaModais.js"></script>
+    <script src="js/views/loading.js"></script>
+
+</body>
+
+</html>
